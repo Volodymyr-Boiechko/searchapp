@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/msv_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/msv_search_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:elevation="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:cardUseCompatPadding="true"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/msv_search_card_input_icon"
+            android:layout_width="@dimen/suggestion_row_height"
+            android:layout_height="@dimen/suggestion_row_height"
+            android:contentDescription="@string/cd_search_button"
+            android:padding="@dimen/medium_margin"
+            app:srcCompat="@drawable/ic_search_dark_24dp"/>
+
+        <EditText
+            android:id="@+id/msv_search_card_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_search_view_height"
+            android:background="@null"
+            android:hint="@string/material_search_view_input_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="textNoSuggestions"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/material_search_view_height"
+            android:paddingLeft="@dimen/material_search_view_height"
+            android:paddingRight="@dimen/material_search_view_height"
+            android:paddingStart="@dimen/material_search_view_height"
+            android:scrollHorizontally="true"
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/secondary_text"/>
+
+        <ImageButton
+            android:id="@+id/msv_search_card_input_microphone"
+            android:layout_width="@dimen/suggestion_row_height"
+            android:layout_height="@dimen/suggestion_row_height"
+            android:layout_gravity="end|top"
+            android:background="@null"
+            android:contentDescription="@string/cd_voice_search_button"
+            android:padding="@dimen/medium_margin"
+            app:srcCompat="@drawable/ic_vector_mic_dark_24dp"/>
+
+        <ImageButton
+            android:id="@+id/msv_search_card_input_cancel"
+            android:layout_width="@dimen/suggestion_row_height"
+            android:layout_height="@dimen/suggestion_row_height"
+            android:layout_gravity="end|top"
+            android:background="@null"
+            android:contentDescription="@string/cd_voice_search_button"
+            android:padding="@dimen/medium_margin"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_close_dark_24dp"
+            tools:visibility="gone"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/msv_search_card_suggestions_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/material_search_view_height"/>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/msv_voice_search_card"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:elevation="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone"
+        app:cardUseCompatPadding="true"
+        tools:targetApi="lollipop"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/msv_voice_search_image_view"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:contentDescription="@string/cd_listening_image"/>
+
+        <TextView
+            android:id="@+id/msv_voice_search_listening_real_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginLeft="@dimen/medium_margin"
+            android:layout_marginRight="@dimen/medium_margin"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="100dp"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/msv_voice_search_listening_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginLeft="@dimen/medium_margin"
+            android:layout_marginRight="@dimen/medium_margin"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="150dp"
+            android:text="@string/material_search_view_voice_listening"
+            android:textSize="18sp"/>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
